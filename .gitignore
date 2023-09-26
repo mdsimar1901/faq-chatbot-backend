@@ -1,2 +1,3 @@
 trained_model.pkl
 data.pth
+__pycache__
