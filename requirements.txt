@@ -1,8 +1,7 @@
 Flask==1.1.2
 Flask-Cors==4.0.0
 keras==2.13.1
-nltk @ file:///tmp/build/80754af9/nltk_1592496090529/work
 numpy==1.23.5
 torch==2.0.1
 torchvision==0.15.2+cu117
-
+gunicorn==21.2.0
