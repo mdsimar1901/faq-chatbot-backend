@@ -1,0 +1,150 @@
+{
+    "intents": [
+        {
+            "tag": "Greeting",
+            "patterns": [
+                "Hello",
+                "Hi",
+                "Hey",
+                "Good morning",
+                "Good afternoon",
+                "hi there",
+                "hi",
+                "hey there",
+                "anyone there"
+            ],
+            "responses": [
+                "Hello! How can I assist you today?",
+                "Hi there! How may I help you?",
+                "Greetings! What can I do for you?",
+                "Good day! What information are you looking for?",
+                "Hi, welcome to the University ChatBot",
+                "Hello, my friend. How can I help you today?"
+            ]
+        },
+        {
+            "tag": "FeesForCourses",
+            "patterns": [
+                "What are the fees for courses?",
+                "Tell me about course fees",
+                "How much do the courses cost?",
+                "Course tuition fees"
+            ],
+            "responses": [
+                "The fees for our courses vary depending on the program. You can find detailed information about course fees on our website.",
+                "Course fee is around 30 K - 70K per Semester, depending on the courses.",
+                "For specific information about course fees, please visit our website or contact our admissions office."
+            ]
+        },
+        {
+            "tag": "Admissions",
+            "patterns": [
+                "How can I apply for admission?",
+                "What are the admission requirements?",
+                "When is the application deadline?",
+                "Is there an application fee?"
+            ],
+            "responses": [
+                "To apply for admission, please visit our admissions portal on our website.",
+                "Admission requirements vary by program. You can find detailed information on our website.",
+                "The application deadline for the upcoming semester is 26/9/23. Be sure to submit your application before then.",
+                "Yes, there is an application fee. You can find the fee details on our website."
+            ]
+        },
+        {
+            "tag": "CoursesOffered",
+            "patterns": [
+                "What are the courses offered",
+                "Tell me about the available courses",
+                "List of programs",
+                "Which programs can I enroll in?"
+            ],
+            "responses": [
+                "We offer 4 M.Sc courses: SS, DS, AIML, and DCS.",
+                "You can explore the list of available courses on our website.",
+                "There are about 15 UG Courses Offered and 6 PG Courses are being offered."
+            ]
+        },
+        {
+            "tag": "Sports",
+            "patterns": [
+                "Tell me about sports facilities",
+                "Are there any sports teams?",
+                "What sports are available?",
+                "Can I join a sports team?"
+            ],
+            "responses": [
+                "We have a variety of sports teams that compete in intercollegiate competitions.",
+                "Our sports facilities are well-equipped and open to all students.",
+                "You can find a list of available sports and teams on our website. Feel free to join one!"
+            ]
+        },
+        {
+            "tag": "Hostel",
+            "patterns": [
+                "Tell me about hostel facilities",
+                "Are there dormitories on campus?",
+                "Can I stay in a hostel?",
+                "What are the hostel fees?"
+            ],
+            "responses": [
+                "Yes, we have dormitories on campus for students who prefer on-campus housing.",
+                "Our hostel facilities are comfortable and convenient for students.",
+                "Information about hostel fees and the application process can be found on our website."
+            ]
+        },
+        {
+            "tag": "Phno",
+            "patterns": [
+                "What is the university's phone number?",
+                "Can you provide me with the contact number?",
+                "How can I reach the university by phone?"
+            ],
+            "responses": [
+                "Our main phone number is 9842962727.",
+                "You can reach us at our main phone number: 9842962727."
+            ]
+        },
+        {
+            "tag": "Mail",
+            "patterns": [
+                "Is there an admissions office email?",
+                "What is the university's admissions email address?",
+                "How can I contact the admissions office via email?"
+            ],
+            "responses": [
+                "For admissions inquiries, you can reach us at cit@edu.in.",
+                "You can contact the admissions office via email at cit@edu.in."
+            ]
+        },
+        {
+            "tag": "CollegeLocation",
+            "patterns": [
+                "Where is the university located?",
+                "What is the address of the university?",
+                "Can you tell me the location of the college?"
+            ],
+            "responses": [
+                "We are located in Coimbatore, Tamil Nadu",
+                "Our university is situated in Coimbatore, Tamil Nadu. The address is Avinashi Rd, Civil Aerodrome Post, Coimbatore, Tamil Nadu 641014."
+            ]
+        },
+        {
+            "tag": "Goodbye",
+            "patterns": [
+                "Thank you", "Thanks", "Appreciate your help", "Goodbye", "Thanks for the info", "adios", "see you later", "bye", "will catch you later", "bye bro"
+            ],
+            "responses": [
+                "You're welcome!",
+                "You're welcome. Have a great day!",
+                "I'm here to assist you. Goodbye!",
+                "Goodbye! If you ever need assistance, don't hesitate to return.",
+                "Okay, have a nice day",
+                "Okay. Take care",
+                "Yeah sure, we'll talk to you later",
+                "Nice conversation. Bye",
+                "Adios"
+            ]
+        }
+    ]
+}
