@@ -15,8 +15,6 @@ I have successfully implemented the backend of the chatbot. This involved develo
 - [Neural Network](#neural-network)
 - [Flask Integration](#flask-integration)
 - [Data Persistence](#data-persistence)
-   - [MongoDB Integration](#mongodb-integration)
-   - [Chat History Storage](#chat-history-storage)
 - [How to Run Locally](#how-to-run-locally)
 - [Deployment](#deployment)
 
@@ -60,7 +58,9 @@ out = self.l3(out)
 ## Flask Integration
 - Create a flask App
 - Imported the chat respone and creating a REST API
-- POST Request is created in /predict endpoint.
+```
+- POST Request in /predict endpoint.
+```
 ```
 { "text":"User Input"}
 ```
@@ -78,3 +78,84 @@ def predict():
 
 Postman API documentation Link - https://documenter.getpostman.com/view/30053279/2s9YJZ3QB8
 
+## Data Persistence
+- Have used MongoDB to keep maintain track of chat history between user and chatbot
+- MongoDB model
+```
+def connect():
+    atlas_connection_string = "mongodb+srv://simar:1234@cluster0.4vk9j99.mongodb.net/?retryWrites=true&w=majority"
+    client = pymongo.MongoClient(atlas_connection_string)
+    db = client.mydatabase
+    collection = db.chat_history
+    return collection, client
+```
+```
+chat_history = collection.find_one() or {"session_history": []}
+session_history = chat_history.get("session_history", [])
+chat_entry = {"input": text, "output": response}
+session_history.append(chat_entry)
+collection.replace_one({}, {"session_history": session_history}, upsert=True)
+```
+- View of chat history stored as Objects in MongoDB
+
+![data-storage](https://github.com/mdsimar1901/faq-chatbot-backend/assets/66200713/1031c1ca-307c-40b3-958d-bf864f6978ca)
+
+## How to run locally
+
+Clone repo and create a virtual environment
+
+```
+$ git clone https://github.com/mdsimar1901/faq-chatbot-backend.git
+$ cd faq-chatbot-backend
+$ python3 -m venv venv
+$ . venv/bin/activate
+```
+
+Install dependencies
+
+```
+$ (venv) pip install Flask torch torchvision nltk
+```
+
+Install nltk package
+
+```
+$ (venv) python
+>>> import nltk
+>>> nltk.download('punkt')
+```
+Run
+
+```
+$ (venv) python train.py
+$ (venv) python chat.py
+```
+
+# Deployment 
+- have deployed the flask application in Google Cloud Platform.
+- Deploying Flask in Google Cloud Platform
+- Lets assume the app is running good in localhost
+```
+if __name__ == "__main__":
+    app.run()
+```
+- Create app.yml file
+```
+runtime: python39
+entrypoint: gunicorn -b :$PORT main:app
+
+handlers:
+- url: /.*
+  script: auto
+```
+- Create requirments.txt
+```
+pip freeze > requirements.txt
+pip install gunicorn
+```
+- Deploy the app using the command
+```
+gcloud app deploy
+```
+
+![Screenshot 2023-09-28 010605](https://github.com/mdsimar1901/faq-chatbot-backend/assets/66200713/3d3059c8-4902-4982-9d45-9db3261c9354)
