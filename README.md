@@ -2,7 +2,7 @@
 
 Postman API documentation Link - https://documenter.getpostman.com/view/30053279/2s9YJZ3QB8
 <br/>
-Deployed Model Endpoint - https://faq-chatbot-400302.el.r.appspot.com//predict
+Deployed Model Endpoint - https://faq-chatbot-400302.el.r.appspot.com/predict
 ## Description
 
 I have successfully implemented the backend of the chatbot. This involved developing a deep learning model using Natural Language Processing (NLP) techniques in Python. I integrated the model with Flask, creating endpoints to provide responses based on the trained model. Additionally, I incorporated MongoDB to ensure data persistence, allowing for the storage of chat history between users and the chatbot. PyTorch was my framework of choice for building and training the neural networks used in this development. This combination of technologies and components forms the foundation of the chatbot's backend.
